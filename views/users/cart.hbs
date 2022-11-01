@@ -1,0 +1,30 @@
+    {{#if cartProducts}}
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each cartProducts}}
+                    <tr>
+                        <td><img style="width: 70px; height: 70px;"
+                                src="/images/product-images/{{this.product._id}}.png" alt=""></td>
+                        <td>{{this.product.Name}}</td>
+                        <td>₹{{this.product.Price}}</td>
+                   
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table><br><br>
+            <h3>TOTAL: ₹ <span>{{total}}</span></h3>
+            <a href="/place-order"><b>Place Order</b></a>
+        </div>
+    </div>
+    {{else}}
+  
+    {{/if}}

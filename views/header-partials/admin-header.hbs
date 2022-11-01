@@ -1,0 +1,28 @@
+
+            <a  href="#">Admin Panel</a>
+          
+            <div >
+                {{#if administator}}
+                <ul>
+                    <li>
+                        <a href="/admin">Home</a>
+                    </li>
+                    <li>
+                        <a  href="/admin/all-products">All Products</a>
+                    </li>
+                   
+                    <li>
+                        <a href="/admin/all-orders">All Orders</a>
+                    </li>
+                
+                </ul>
+                {{/if}}
+
+                {{#if administator}}
+                <a href="#">{{administator.Name}}</a>
+                <a href="/admin/signout">Sign Out</a>
+                {{else}}
+                <a href="/admin/signup" >Sign Up</a>
+                <a href="/admin/signin">Sign In</a>
+                {{/if}}
+      

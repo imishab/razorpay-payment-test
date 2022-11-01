@@ -1,0 +1,16 @@
+
+            {{#each products}}
+                <br><br>
+                        <img src="/images/product-images/{{this._id}}.png"  alt="phone-image" style="height: 17rem;">
+                        
+                            <div>
+                                <div>
+                                    <h5>{{this.Name}}</h5>
+                                
+                                    <p><small>₹{{this.Price}}</small></p>
+                                </div>
+                            </div>
+                            <p>{{this.Description}}</p>
+                    
+            {{/each}}
+     

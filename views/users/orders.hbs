@@ -1,0 +1,34 @@
+    {{#if orders}}
+   
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Pincode</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Payment</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each orders}}
+                    <tr>
+                        <td>{{this.orderObject.date}}</td>
+                        <td>{{this.orderObject.deliveryDetails.address}}</td>
+                        <td>{{this.orderObject.deliveryDetails.pincode}}</td>
+                        <td>{{this.orderObject.deliveryDetails.mobile}}</td>
+                        <td>- {{this.orderObject.totalAmount}} /-</td>
+                        <td>{{this.orderObject.paymentMethod}}</td>
+                    
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+    
+    {{else}}
+   
+            <h4>You Have Ordered Nothing!</h4>
+          
+    {{/if}}

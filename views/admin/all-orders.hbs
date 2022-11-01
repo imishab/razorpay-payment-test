@@ -1,0 +1,38 @@
+
+
+        <div style="overflow: visible;">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Pincode</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Payment</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each orders}}
+                    <tr>
+                        <td>{{this.orderObject.date}}</td>
+                        <td>{{this.orderObject.user.Name}}</td>
+                        <td>{{this.orderObject.user.Email}}</td>
+                        <td>{{this.orderObject.deliveryDetails.address}}</td>
+                        <td>{{this.orderObject.deliveryDetails.pincode}}</td>
+                        <td>{{this.orderObject.deliveryDetails.mobile}}</td>
+                        <td>- {{this.orderObject.totalAmount}} /-</td>
+                        <td>{{this.orderObject.paymentMethod}}</td>
+                        <td>
+                          
+                        </td>
+                    
+                      
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+       

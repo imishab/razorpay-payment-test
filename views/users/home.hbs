@@ -1,0 +1,29 @@
+
+            {{#each products}}<br><br>
+      
+                    <img src="/images/product-images/{{this._id}}.png"
+                        style="height: 17rem;">
+                                <h5>{{this.Name}}</h5>
+                         
+                                <p><small>₹{{this.Price}}</small></p>
+                        <p>{{this.Description}}</p>
+                            <button onclick="addToCart('{{this._id}}')">Add to Cart</button>
+                 
+            {{/each}}
+   
+
+<script>
+    function addToCart(productId) {
+        $.ajax({
+            url: "/add-to-cart/" + productId,
+            method: "get",
+            success: (response) => {
+                if (response.status) {
+                    let count = $("#cart-count").html();
+                    count = parseInt(count) + 1;
+                    $("#cart-count").html(count);
+                }
+            },
+        });
+    }
+</script>

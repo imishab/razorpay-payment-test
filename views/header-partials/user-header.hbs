@@ -1,0 +1,26 @@
+
+            <a  href="#">Shopping Cart</a>
+        
+            <div >
+                <ul >
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a  href="/cart">Cart<span  id="cart-count">{{cartCount}}</span></a>
+                    </li>
+                    {{#if user}}
+                        <li>
+                            <a href="/orders">Orders</a>
+                        </li>
+                    {{/if}}
+                    
+                </ul>
+                {{#if user}}
+                    <a href="#" >{{user.Name}}</a>
+                    <a href="/signout" >Sign Out</a>
+                {{else}}
+                    <a href="/signup" >Sign Up</a>
+                    <a href="/signin" >Sign In</a>
+                {{/if}}
+     
